@@ -32,7 +32,7 @@ $mahasiswa = query("SELECT * FROM data_mhs")
             <tr>
                 <td><?= $i?></td>
                 <td>
-                    <a href="">ubah</a>
+                    <a href="ubah.php?id=<?= $mhs['id']; ?>">ubah</a>
                     <a href="hapus.php?id=<?= $mhs['id']; ?>">hapus</a>
                 </td>
                 <td>

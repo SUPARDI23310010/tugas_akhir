@@ -34,4 +34,26 @@ function hapus($id){
     return mysqli_affected_rows($koneksi);
 }
 
+function ubah($data){
+    global $koneksi;
+    $id = $data["id"];
+    $nama = htmlspecialchars($data["nama"]);
+    $nim = htmlspecialchars($data["nim"]);
+    $email = htmlspecialchars($data["email"]);
+    $jurusan = htmlspecialchars($data["jurusan"]);
+    $gambar = htmlspecialchars($data["gambar"]);
+
+    $query = "UPDATE data_mhs SET
+    nama = '$nama',
+    nim = '$nim',
+    email = '$email',
+    jurusan = '$jurusan',
+    gambar = '$gambar'
+    WHERE id = $id
+    ";
+
+    mysqli_query($koneksi,$query);
+    return mysqli_affected_rows($koneksi);
+}
+
 ?>
