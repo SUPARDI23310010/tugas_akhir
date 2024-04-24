@@ -13,6 +13,10 @@ $mahasiswa = query("SELECT * FROM data_mhs")
 </head>
 <body>
     <h1>Daftar Mahasiswa</h1>
+
+    <a href="tambah.php">Tambah Data Mahasiswa</a>
+    <br></br>
+
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
             <th>No.</th>
@@ -29,7 +33,7 @@ $mahasiswa = query("SELECT * FROM data_mhs")
                 <td><?= $i?></td>
                 <td>
                     <a href="">ubah</a>
-                    <a href="">hapus</a>
+                    <a href="hapus.php?id=<?= $mhs['id']; ?>">hapus</a>
                 </td>
                 <td>
                     <img src="img/<?= $mhs['gambar']?>" alt="" width="50">
