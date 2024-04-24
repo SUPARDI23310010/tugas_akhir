@@ -1,7 +1,9 @@
 <?php
 require 'function.php';
-$mahasiswa = query("SELECT * FROM data_mhs")
-
+$mahasiswa = query("SELECT * FROM data_mhs");
+if(isset($_POST["cari"])){
+    $mahasiswa = cari($_POST["keyword"]);
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +18,12 @@ $mahasiswa = query("SELECT * FROM data_mhs")
 
     <a href="tambah.php">Tambah Data Mahasiswa</a>
     <br></br>
+
+    <form action="" method="POST">
+        <input type="text" name="keyword" size="30" autofocus placeholder="Masukkan kata kunci pencarian" autocomplete="off">
+        <button type="submit" name="cari">Cari</button>
+    </form>
+    <br>
 
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
